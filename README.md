@@ -1,4 +1,4 @@
-[travis-badge]: https://img.shields.io/travis/taiyaeix/iso4217.svg
+[travis-badge]: https://img.shields.io/travis/taiyaeix/iso4217.rs.svg
 [travis]: https://travis-ci.org/taiyaeix/iso4217.rs
 [license-badge]: https://img.shields.io/badge/license-ISC-blue.svg
 [license]: https://opensource.org/licenses/ISC
