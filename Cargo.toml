@@ -1,6 +1,11 @@
 [package]
+authors = ["Austin Hellyer <hello@austinhellyer.me>"]
+description = "ISO 4217 data."
+license = "ISC"
+keywords = ["iso4217", "ISO", "4217"]
 name = "iso4217"
+readme = "README.md"
+repository = "https://github.com/taiyaeix/iso4217.rs"
 version = "0.1.0"
-authors = ["Austin Hellyer <austin@runisiantech.io>"]
 
 [dependencies]
