@@ -1,0 +1,6 @@
+[package]
+name = "iso4217"
+version = "0.1.0"
+authors = ["Austin Hellyer <austin@runisiantech.io>"]
+
+[dependencies]
