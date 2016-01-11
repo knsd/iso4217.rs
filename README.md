@@ -21,13 +21,13 @@ Rust crate for ISO 4217 data.
 
 Add the following dependency to your Cargo.toml:
 
-```
+```rust
 iso4217 = "*"
 ```
 
 And include it in your project:
 
-```
+```rust
 extern crate iso4217;
 ```
 
@@ -35,7 +35,7 @@ extern crate iso4217;
 
 Retrieve all currencies defined by ISO 4217:
 
-```
+```rust
 extern crate iso4217;
 
 fn main() {
@@ -46,7 +46,7 @@ fn main() {
 
 Or retrieve a currency by its alpha3 code:
 
-```
+```rust
 ...
     let currency = iso4217::alpha3("EUR").unwrap();
 ```
@@ -55,7 +55,7 @@ Or retrieve a currency by its alpha3 code:
 Retrieve a vector of currencies used by a country, given an alpha2 code
 specified by ISO 3166:
 
-```
+```rust
 ...
     let currencies = iso4217::country("SG").unwrap();
 ```
@@ -64,7 +64,7 @@ specified by ISO 3166:
 Retrieve a vector of currencies with a certain exponential value
 (decimal places):
 
-```
+```rust
 ...
     let currencies = iso4217::exp(2).unwrap();
 ```
@@ -72,7 +72,7 @@ Retrieve a vector of currencies with a certain exponential value
 
 By the full name of the currency:
 
-```
+```rust
 ...
     let currency = iso4217::name("Turkish lira").unwrap();
 ```
@@ -80,7 +80,7 @@ By the full name of the currency:
 
 By the 3-digit numeric representation of the currency:
 
-```
+```rust
 ...
     let currency = iso4217::num("840").unwrap();
 ```
