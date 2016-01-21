@@ -55,11 +55,8 @@ pub struct CurrencyCode<'a> {
 /// An example of a valid use case:
 ///
 /// ```
-/// extern crate iso4217;
-///
-/// fn main() {
-///     let currencies = iso4217::all().unwrap();
-/// }
+/// let currencies = iso4217::all().unwrap();
+/// ```
 pub fn all<'a>() -> Option<Vec<CurrencyCode<'a>>> {
     let codes: Vec<CurrencyCode> = currency_codes();
 
@@ -78,11 +75,7 @@ pub fn all<'a>() -> Option<Vec<CurrencyCode<'a>>> {
 /// An example of a valid use case:
 ///
 /// ```
-/// extern crate iso4217;
-///
-/// fn main() {
-///     let currency = iso4217::alpha3("ALL").unwrap();
-/// }
+/// let currency = iso4217::alpha3("ALL").unwrap();
 /// ```
 pub fn alpha3<'a>(alpha3: &str) -> Option<CurrencyCode<'a>> {
     let mut code_ret: Option<CurrencyCode> = None;
@@ -106,11 +99,7 @@ pub fn alpha3<'a>(alpha3: &str) -> Option<CurrencyCode<'a>> {
 /// An example of a valid use case:
 ///
 /// ```
-/// extern crate iso4217;
-///
-/// fn main() {
-///     let currencies = iso4217::country("AL").unwrap();
-/// }
+/// let currencies = iso4217::country("AL").unwrap();
 /// ```
 pub fn country<'a>(country: &str) -> Option<Vec<CurrencyCode<'a>>> {
     let mut codes_ret: Vec<CurrencyCode> = vec![];
@@ -136,11 +125,7 @@ pub fn country<'a>(country: &str) -> Option<Vec<CurrencyCode<'a>>> {
 /// An example of a valid use case:
 ///
 /// ```
-/// extern crate iso4217;
-///
-/// fn main() {
-///     let currencies = iso4217::exp(2).unwrap();
-/// }
+/// let currencies = iso4217::exp(2).unwrap();
 /// ```
 pub fn exp<'a>(exp: i8) -> Option<Vec<CurrencyCode<'a>>> {
     let mut codes_ret: Vec<CurrencyCode> = vec![];
@@ -166,11 +151,7 @@ pub fn exp<'a>(exp: i8) -> Option<Vec<CurrencyCode<'a>>> {
 /// An example of a valid name:
 ///
 /// ```
-/// extern crate iso4217;
-///
-/// fn main() {
-///     let currency = iso4217::name("Albanian lek").unwrap();
-/// }
+/// let currency = iso4217::name("Albanian lek").unwrap();
 /// ```
 pub fn name<'a>(name: &str) -> Option<CurrencyCode<'a>> {
     let mut code_ret: Option<CurrencyCode> = None;
@@ -194,11 +175,7 @@ pub fn name<'a>(name: &str) -> Option<CurrencyCode<'a>> {
 /// An example of a valid num:
 ///
 /// ```
-/// extern crate iso4217;
-///
-/// fn main() {
-///     let currency = iso4217::num("008").unwrap();
-/// }
+/// let currency = iso4217::num("008").unwrap();
 /// ```
 pub fn num<'a>(num: &str) -> Option<CurrencyCode<'a>> {
     let mut code_ret: Option<CurrencyCode> = None;
