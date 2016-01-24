@@ -87,4 +87,6 @@ Retrieve by the 3-digit numeric representation of the currency:
 
 ### License
 
-License info in `LICENSE.md`. Long story short, ISC.
+License info in [LICENSE.md]. Long story short, ISC.
+
+[LICENSE.md]: https://github.com/taiyaeix/iso4217.rs/blob/master/LICENSE.md
