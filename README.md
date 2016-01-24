@@ -44,7 +44,7 @@ fn main() {
 ```
 
 
-Or retrieve a currency by its alpha3 code:
+Retrieve a currency by its alpha3 code:
 
 ```rust
 ...
@@ -70,7 +70,7 @@ Retrieve a vector of currencies with a certain exponential value
 ```
 
 
-By the full name of the currency:
+Retrieve by the full name of the currency:
 
 ```rust
 ...
@@ -78,7 +78,7 @@ By the full name of the currency:
 ```
 
 
-By the 3-digit numeric representation of the currency:
+Retrieve by the 3-digit numeric representation of the currency:
 
 ```rust
 ...
