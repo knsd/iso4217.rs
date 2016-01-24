@@ -21,7 +21,7 @@ Rust crate for ISO 4217 data.
 
 Add the following dependency to your Cargo.toml:
 
-```rust
+```toml
 iso4217 = "*"
 ```
 
