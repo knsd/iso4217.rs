@@ -31,11 +31,11 @@ use codes::currency_codes;
 /// Struct that contains the data for each Currency Code defined by ISO 4217,
 /// including the following pieces of information:
 ///
-/// - alpha3: str of a 3-letter code of the currency;
-/// - countries: vector of alpha2 codes for countries that use the currency;
-/// - exp: i8 of the decimal places of the currency;
-/// - name: str of the fully readable and used name of the currency;
-/// - num: str of the 3-digit numeric code assigned to the currency.
+/// - `alpha3` - str of a 3-letter code of the currency.
+/// - `countries` - vector of alpha2 codes for countries that use the currency.
+/// - `exp` - i8 of the decimal places of the currency.
+/// - `name` - str of the fully readable and used name of the currency.
+/// - `num` - str of the 3-digit numeric code assigned to the currency.
 ///
 /// This struct is public and derives from Clone and Debug.
 #[derive(Clone, Debug)]
@@ -67,8 +67,7 @@ pub fn all<'a>() -> Option<Vec<CurrencyCode<'a>>> {
     }
 }
 
-/// Returns an Option<CurrencyCode> of the CurrencyCode with the given alpha3
-/// code.
+/// Returns an `Option` of the `CurrencyCode` with the given alpha3 code.
 ///
 /// # Examples
 ///
@@ -91,8 +90,8 @@ pub fn alpha3<'a>(alpha3: &str) -> Option<CurrencyCode<'a>> {
     code_ret
 }
 
-/// Returns an Option<Vec<CurrencyCode>> of the CurrencyCodes that are used by
-/// the given country's alpha2 code, specified by ISO 3166.
+/// Returns an `Option` of a `Vec` of `CurrencyCode`s that are used by the given
+/// country's `alpha2` code, specified by ISO 3166.
 ///
 /// # Examples
 ///
@@ -117,8 +116,8 @@ pub fn country<'a>(country: &str) -> Option<Vec<CurrencyCode<'a>>> {
     }
 }
 
-/// Returns an Option<Vec<CurrencyCode>> of the CurrencyCodes with the specified
-/// decimal place.
+/// Returns an `Option` of a `Vec` of `CurrencyCode`s with the specified decimal
+/// place.
 ///
 /// # Examples
 ///
@@ -143,8 +142,7 @@ pub fn exp<'a>(exp: i8) -> Option<Vec<CurrencyCode<'a>>> {
     }
 }
 
-/// Returns an Option<CurrencyCode> of the CurrencyCode with the specified
-/// name.
+/// Returns an `Option` of the `CurrencyCode` with the specified `name`.
 ///
 /// # Examples
 ///
@@ -167,8 +165,8 @@ pub fn name<'a>(name: &str) -> Option<CurrencyCode<'a>> {
     code_ret
 }
 
-/// Returns an Option<CurrencyCode> of the CurrencyCode with the specified
-/// numerical 3-digit representation.
+/// Returns an `Option` of the `CurrencyCode` with the specified numerical
+/// 3-digit representation.
 ///
 /// # Examples
 ///
