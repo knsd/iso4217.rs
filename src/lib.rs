@@ -47,8 +47,7 @@ pub struct CurrencyCode<'a> {
     pub num: &'a str,
 }
 
-/// Returns an Option<Vec<CurrencyCode>> of all CurrencyCodes defined by
-/// ISO 4217.
+/// Returns an `Option` of a `Vec` of `CurrencyCode`s defined by ISO 4217.
 ///
 /// # Examples
 ///
