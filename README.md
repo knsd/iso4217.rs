@@ -47,8 +47,11 @@ fn main() {
 Retrieve a currency by its alpha3 code:
 
 ```rust
-...
+extern crate iso4217;
+
+fn main() {
     let currency = iso4217::alpha3("EUR").unwrap();
+}
 ```
 
 
@@ -56,8 +59,11 @@ Retrieve a vector of currencies used by a country, given an alpha2 code
 specified by ISO 3166:
 
 ```rust
-...
+extern crate iso4217;
+
+fn main() {
     let currencies = iso4217::country("SG").unwrap();
+}
 ```
 
 
@@ -65,24 +71,33 @@ Retrieve a vector of currencies with a certain exponential value
 (decimal places):
 
 ```rust
-...
+extern crate iso4217;
+
+fn main() {
     let currencies = iso4217::exp(2).unwrap();
+}
 ```
 
 
 Retrieve by the full name of the currency:
 
 ```rust
-...
+extern crate iso4217;
+
+fn main() {
     let currency = iso4217::name("Turkish lira").unwrap();
+}
 ```
 
 
 Retrieve by the 3-digit numeric representation of the currency:
 
 ```rust
-...
+extern crate iso4217;
+
+fn main() {
     let currency = iso4217::num("840").unwrap();
+}
 ```
 
 ### License
