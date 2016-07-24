@@ -1,5 +1,5 @@
-[travis-badge]: https://img.shields.io/travis/taiyaeix/iso4217.rs.svg?style=flat-square
-[travis]: https://travis-ci.org/taiyaeix/iso4217.rs
+[travis-badge]: https://img.shields.io/travis/zeyla/iso4217.rs.svg?style=flat-square
+[travis]: https://travis-ci.org/zeyla/iso4217.rs
 [license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
 [license]: https://opensource.org/licenses/ISC
 
@@ -104,4 +104,4 @@ fn main() {
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[LICENSE.md]: https://github.com/taiyaeix/iso4217.rs/blob/master/LICENSE.md
+[LICENSE.md]: https://github.com/zeyla/iso4217.rs/blob/master/LICENSE.md
