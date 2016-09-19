@@ -22,10 +22,11 @@
 // |
 // | - [Wikipedia](http://en.wikipedia.org/wiki/ISO_4217)
 //
-// Originally by taiyaeix on GitHub.
+// Originally by zeyla on GitHub.
 
 use CurrencyCode;
 
+/// Returns all CurrencyCodes defined by ISO 4217.
 // A function that returns a really big Vector of all the currency codes
 // designated by ISO 4217, with some exceptions:
 //
@@ -57,7 +58,7 @@ use CurrencyCode;
 //
 // Country alpha2-codes are taken from the ISO's website:
 // https://www.iso.org/obp/ui/
-pub fn currency_codes<'a>() -> Vec<CurrencyCode<'a>> {
+pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
     let mut codes: Vec<CurrencyCode> = vec![];
 
     // Sorted by num.

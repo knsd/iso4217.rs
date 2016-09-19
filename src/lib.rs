@@ -22,168 +22,48 @@
 // |
 // | - [Wikipedia](http://en.wikipedia.org/wiki/ISO_4217)
 //
-// Originally by taiyaeix on GitHub.
+// Originally by zeyla on GitHub.
 
 mod codes;
 
-use codes::currency_codes;
+pub use codes::all;
 
-/// Struct that contains the data for each Currency Code defined by ISO 4217,
-/// including the following pieces of information:
-///
-/// - `alpha3` - str of a 3-letter code of the currency.
-/// - `countries` - vector of alpha2 codes for countries that use the currency.
-/// - `exp` - i8 of the decimal places of the currency.
-/// - `name` - str of the fully readable and used name of the currency.
-/// - `num` - str of the 3-digit numeric code assigned to the currency.
-///
-/// This struct is public and derives from Clone and Debug.
+/// Data for each Currency Code defined by ISO 4217.
 #[derive(Clone, Debug)]
 pub struct CurrencyCode<'a> {
+    /// 3-letter code of the currency
     pub alpha3: &'a str,
+    /// Vector of Alpha2 codes for the countries that use the currency
     pub countries: Vec<&'a str>,
+    /// Number of decimals
     pub exp: i8,
+    /// Fully readable and used name
     pub name: &'a str,
+    /// Assigned 3-digit numeric code
     pub num: &'a str,
 }
 
-/// Returns an `Option` of a `Vec` of `CurrencyCode`s defined by ISO 4217.
-///
-/// # Examples
-///
-/// An example of a valid use case:
-///
-/// ```
-/// let currencies = iso4217::all().unwrap();
-/// ```
-pub fn all<'a>() -> Option<Vec<CurrencyCode<'a>>> {
-    let codes: Vec<CurrencyCode> = currency_codes();
-
-    if codes.len() > 0 {
-        Some(codes)
-    } else {
-        None
-    }
-}
-
-/// Returns an `Option` of the `CurrencyCode` with the given alpha3 code.
-///
-/// # Examples
-///
-/// An example of a valid use case:
-///
-/// ```
-/// let currency = iso4217::alpha3("ALL").unwrap();
-/// ```
+/// Returns the CurrencyCode with the given Alpha3 code, if one exists.
 pub fn alpha3<'a>(alpha3: &str) -> Option<CurrencyCode<'a>> {
-    let mut code_ret: Option<CurrencyCode> = None;
-
-    for code in currency_codes() {
-        if code.alpha3 == alpha3 {
-            code_ret = Some(code.clone());
-
-            break;
-        }
-    }
-
-    code_ret
+    all().into_iter().find(|c| c.alpha3 == alpha3)
 }
 
-/// Returns an `Option` of a `Vec` of `CurrencyCode`s that are used by the given
-/// country's `alpha2` code, specified by ISO 3166.
-///
-/// # Examples
-///
-/// An example of a valid use case:
-///
-/// ```
-/// let currencies = iso4217::country("AL").unwrap();
-/// ```
-pub fn country<'a>(country: &str) -> Option<Vec<CurrencyCode<'a>>> {
-    let mut codes_ret: Vec<CurrencyCode> = vec![];
-
-    for code in currency_codes() {
-        if code.countries.contains(&country) {
-            codes_ret.push(code.clone());
-        }
-    }
-
-    if codes_ret.len() > 0 {
-        Some(codes_ret)
-    } else {
-        None
-    }
+/// Returns a vector of all CurrencyCodes that use a given Alpha2 code.
+pub fn country<'a>(country: &str) -> Vec<CurrencyCode<'a>> {
+    all().into_iter().filter(|c| c.countries.contains(&country)).collect()
 }
 
-/// Returns an `Option` of a `Vec` of `CurrencyCode`s with the specified decimal
-/// place.
-///
-/// # Examples
-///
-/// An example of a valid use case:
-///
-/// ```
-/// let currencies = iso4217::exp(2).unwrap();
-/// ```
-pub fn exp<'a>(exp: i8) -> Option<Vec<CurrencyCode<'a>>> {
-    let mut codes_ret: Vec<CurrencyCode> = vec![];
-
-    for code in currency_codes() {
-        if code.exp == exp {
-            codes_ret.push(code.clone());
-        }
-    }
-
-    if codes_ret.len() > 0 {
-        Some(codes_ret)
-    } else {
-        None
-    }
+/// Returns a vector of all CurrencyCodes with the specified decimal place.
+pub fn exp<'a>(exp: i8) -> Vec<CurrencyCode<'a>> {
+    all().into_iter().filter(|c| c.exp == exp).collect()
 }
 
-/// Returns an `Option` of the `CurrencyCode` with the specified `name`.
-///
-/// # Examples
-///
-/// An example of a valid name:
-///
-/// ```
-/// let currency = iso4217::name("Albanian lek").unwrap();
-/// ```
+/// Returns the CurrencyCode with the given name, if one exists.
 pub fn name<'a>(name: &str) -> Option<CurrencyCode<'a>> {
-    let mut code_ret: Option<CurrencyCode> = None;
-
-    for code in currency_codes() {
-        if code.name == name {
-            code_ret = Some(code);
-
-            break;
-        }
-    }
-
-    code_ret
+    all().into_iter().find(|c| c.name == name)
 }
 
-/// Returns an `Option` of the `CurrencyCode` with the specified numerical
-/// 3-digit representation.
-///
-/// # Examples
-///
-/// An example of a valid num:
-///
-/// ```
-/// let currency = iso4217::num("008").unwrap();
-/// ```
+/// Returns the CurrencyCode with the given numerical code, if one exists.
 pub fn num<'a>(num: &str) -> Option<CurrencyCode<'a>> {
-    let mut code_ret: Option<CurrencyCode> = None;
-
-    for code in currency_codes() {
-        if code.num == num {
-            code_ret = Some(code);
-
-            break;
-        }
-    }
-
-    code_ret
+    all().into_iter().find(|c| c.num == num)
 }

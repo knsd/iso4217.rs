@@ -30,7 +30,7 @@ use iso4217::{CurrencyCode, all, alpha3, country, exp, name, num};
 
 #[test]
 fn get_all() {
-    assert!(all().is_some());
+    assert!(!all().is_empty());
 }
 
 #[test]
@@ -40,12 +40,12 @@ fn get_by_alpha3() {
 
 #[test]
 fn get_by_country() {
-    assert!(country("AL").is_some());
+    assert!(!country("AL").is_empty());
 }
 
 #[test]
 fn get_by_exp() {
-    assert!(exp(2).is_some());
+    assert!(!exp(2).is_empty());
 }
 
 #[test]
@@ -61,7 +61,7 @@ fn get_by_num() {
 #[test]
 fn backwards_compats() {
     // Test the number of total CurrencyCodes.
-    assert!(all().unwrap().len() == 155);
+    assert!(all().len() == 155);
 }
 
 // Test that one or multiple country alpha2 codes can be in a CurrencyCode's
