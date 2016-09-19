@@ -9,10 +9,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 
+## [0.1.1] - 2016-09-18
+
+### Added
+
+### Changed
+
+- Fixed Sudanese Pound's Alpha3 from "SGD" --> "SDG"
+
+
 ## [0.1.0] - 2016-01-11
 
 Initial commit.
 
 
-[Unreleased]: https://github.com/taiyaeix/iso4217.rs/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/taiyaeix/iso4217.rs/compare/b44021c...v0.1.0
+[Unreleased]: https://github.com/zeyla/iso4217.rs/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/zeyla/iso4217.rs/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/zeyla/iso4217.rs/compare/b44021c...v0.1.0
