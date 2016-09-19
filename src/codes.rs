@@ -1062,7 +1062,7 @@ pub fn currency_codes<'a>() -> Vec<CurrencyCode<'a>> {
         num: "937",
     });
     codes.push(CurrencyCode {
-        alpha3: "SGD",
+        alpha3: "SDG",
         countries: vec!["SD"],
         exp: 2,
         name: "Sudanese pound",
