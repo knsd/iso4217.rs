@@ -1,9 +1,4 @@
-[travis-badge]: https://img.shields.io/travis/zeyla/iso4217.rs.svg?style=flat-square
-[travis]: https://travis-ci.org/zeyla/iso4217.rs
-[license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
-[license]: https://opensource.org/licenses/ISC
-
-[![travis-badge][]][travis] [![license-badge][]][license]
+[![ci-badge][]][ci] [![license-badge][]][license]
 
 # iso4217.rs
 
@@ -54,7 +49,6 @@ fn main() {
 }
 ```
 
-
 Retrieve a vector of currencies used by a country, given an alpha2 code
 specified by ISO 3166:
 
@@ -65,7 +59,6 @@ fn main() {
     let currencies = iso4217::country("SG").unwrap();
 }
 ```
-
 
 Retrieve a vector of currencies with a certain exponential value
 (decimal places):
@@ -78,7 +71,6 @@ fn main() {
 }
 ```
 
-
 Retrieve by the full name of the currency:
 
 ```rust
@@ -88,7 +80,6 @@ fn main() {
     let currency = iso4217::name("Turkish lira").unwrap();
 }
 ```
-
 
 Retrieve by the 3-digit numeric representation of the currency:
 
@@ -104,4 +95,8 @@ fn main() {
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[LICENSE.md]: https://github.com/zeyla/iso4217.rs/blob/master/LICENSE.md
+[ci-badge]: https://gitlab.com/kalasi/iso4217.rs/badges/master/build.svg
+[ci]: https://gitlab.com/kalasi/iso4217.rs/pipelines
+[license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
+[license]: https://opensource.org/licenses/ISC
+[LICENSE.md]: https://gitlab.com/kalasi/iso4217.rs/blob/master/LICENSE.md
