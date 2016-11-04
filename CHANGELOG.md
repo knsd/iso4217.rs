@@ -8,6 +8,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+## [0.2.0] - 2016-11-04
+
+### Added
+
+### Changed
+
+- Optimized and simplified the codebase
+- `Vec`s are now no longer wrapped in `Option`s
+
 ## [0.1.1] - 2016-09-18
 
 ### Added
@@ -20,6 +29,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 Initial commit.
 
-[Unreleased]: https://gitlab.com/kalasi/iso4217.rs/compare/v0.1.1...master
+[Unreleased]: https://gitlab.com/kalasi/iso4217.rs/compare/v0.2.0...master
+[0.2.0]: https://gitlab.com/kalasi/iso4217.rs/compare/v0.1.1...v0.2.0
 [0.1.1]: https://gitlab.com/kalasi/iso4217.rs/compare/v0.1.0...v0.1.1
 [0.1.0]: https://gitlab.com/kalasi/iso4217.rs/compare/b44021c...v0.1.0
