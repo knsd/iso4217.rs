@@ -95,8 +95,8 @@ fn main() {
 
 License info in [LICENSE.md]. Long story short, ISC.
 
-[ci-badge]: https://gitlab.com/kalasi/iso4217.rs/badges/master/build.svg
-[ci]: https://gitlab.com/kalasi/iso4217.rs/pipelines
+[ci-badge]: https://github.com/zeyla/iso4217.rs/badges/master/build.svg
+[ci]: https://github.com/zeyla/iso4217.rs/pipelines
 [license-badge]: https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square
 [license]: https://opensource.org/licenses/ISC
-[LICENSE.md]: https://gitlab.com/kalasi/iso4217.rs/blob/master/LICENSE.md
+[LICENSE.md]: https://github.com/zeyla/iso4217.rs/blob/master/LICENSE.md
