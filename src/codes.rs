@@ -26,66 +26,32 @@
 
 use CurrencyCode;
 
-/// Returns all CurrencyCodes defined by ISO 4217.
-// A function that returns a really big Vector of all the currency codes
-// designated by ISO 4217, with some exceptions:
-//
-// - BOV Bolivian Mvdol (funds code)
-// - CHE WIR Euro (complementary currency)
-// - CHW WIR Franc (complementary currency)
-// - CLF Unidad de Fomento (funds code)
-// - CNH Chinese yuan when traded in Hong Kong
-// - COU Unidad de Valor Real (UVR) (funds code)
-// - MXV Mexican Unidad de Inversion (UDI) (funds code)
-// - USN United States dollar (next day) (funds code)
-// - USS United States dollar (same day) (funds code)
-// - UYI Uruguay Peso en Unidades Indexadas (URUIURUI) (funds code)
-// - XAG Silver (one troy ounce)
-// - XAU Gold (one troy ounce)
-// - XBA European Composite Unit (EURCO) (bond market unit)
-// - XBB European Monetary Unit (E.M.U.-6) (bond market unit)
-// - XBC European Unit of Account 9 (E.U.A.-9) (bond market unit)
-// - XBD European Unit of Account 17 (E.U.A.-17) (bond market unit)
-// - XDR Special drawing rights
-// - XFU UIC franc (special settlement currency)
-// - XPD Palladium (one troy ounce)
-// - XPT Platinum (one troy ounce)
-// - XSU Unified System for Regional Compensation (SUCRE)
-// - XTS Code reserved for testing purposes
-// - XUA ADB Unit of Account (African Development Bank)
-// - XXX No currency
-// - ZWD Zimbabwe dollar
-//
-// Country alpha2-codes are taken from the ISO's website:
-// https://www.iso.org/obp/ui/
-pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
-    let mut codes: Vec<CurrencyCode> = vec![];
-
+const ALL: [CurrencyCode; 155] = [
     // Sorted by num.
-    codes.push(CurrencyCode {
+    CurrencyCode {
         alpha3: "ALL",
-        countries: vec!["AL"],
+        countries: &["AL"],
         exp: 2,
         name: "Albanian lek",
         num: "008",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "DZD",
-        countries: vec!["DZ"],
+        countries: &["DZ"],
         exp: 2,
         name: "Algerian dinar",
         num: "012",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "ARS",
-        countries: vec!["AR"],
+        countries: &["AR"],
         exp: 2,
         name: "Argentine peso",
         num: "032",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "AUD",
-        countries: vec![
+        countries: &[
             "AU",
             "CC",
             "CX",
@@ -98,202 +64,202 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "Australian dollar",
         num: "036",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BSD",
-        countries: vec!["BS"],
+        countries: &["BS"],
         exp: 2,
         name: "Bahamian dollar",
         num: "044",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BHD",
-        countries: vec!["BH"],
+        countries: &["BH"],
         exp: 2,
         name: "Bahraini dinar",
         num: "048",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BDT",
-        countries: vec!["BD"],
+        countries: &["BD"],
         exp: 2,
         name: "Bangladeshi taka",
         num: "050",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "AMD",
-        countries: vec!["AM"],
+        countries: &["AM"],
         exp: 2,
         name: "Armenian dram",
         num: "051",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BBD",
-        countries: vec!["BB"],
+        countries: &["BB"],
         exp: 2,
         name: "Barbados dollar",
         num: "052",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BMD",
-        countries: vec!["BM"],
+        countries: &["BM"],
         exp: 2,
         name: "Bermudian dollar",
         num: "060",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BTN",
-        countries: vec!["BT"],
+        countries: &["BT"],
         exp: 2,
         name: "Bhutanese ngultrum",
         num: "064",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BOB",
-        countries: vec!["BO"],
+        countries: &["BO"],
         exp: 2,
         name: "Boliviano",
         num: "068",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BWP",
-        countries: vec!["BW"],
+        countries: &["BW"],
         exp: 2,
         name: "Botswana pula",
         num: "072",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BZD",
-        countries: vec!["BZ"],
+        countries: &["BZ"],
         exp: 2,
         name: "Belize dollar",
         num: "084",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SBD",
-        countries: vec!["SB"],
+        countries: &["SB"],
         exp: 2,
         name: "Soloman Islands dollar",
         num: "090",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BND",
-        countries: vec![
+        countries: &[
             "BN",
             "SG",
         ],
         exp: 2,
         name: "Brunei dollar",
         num: "096",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MMK",
-        countries: vec!["MM"],
+        countries: &["MM"],
         exp: 2,
         name: "Myanmar kyat",
         num: "104",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BIF",
-        countries: vec!["BI"],
+        countries: &["BI"],
         exp: 0,
         name: "Burundian franc",
         num: "108",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KHR",
-        countries: vec!["KH"],
+        countries: &["KH"],
         exp: 2,
         name: "Cambodian riel",
         num: "116",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CAD",
-        countries: vec!["CA"],
+        countries: &["CA"],
         exp: 2,
         name: "Canadian dollar",
         num: "124",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CVE",
-        countries: vec!["CV"],
+        countries: &["CV"],
         exp: 0,
         name: "Cape Verde escudo",
         num: "132",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KYD",
-        countries: vec!["KY"],
+        countries: &["KY"],
         exp: 2,
         name: "Cayman Islands dollar",
         num: "136",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "LKR",
-        countries: vec!["LK"],
+        countries: &["LK"],
         exp: 2,
         name: "Sri Lankan rupee",
         num: "144",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CLP",
-        countries: vec!["CL"],
+        countries: &["CL"],
         exp: 0,
         name: "Chilean peso",
         num: "152",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CNY",
-        countries: vec!["CN"],
+        countries: &["CN"],
         exp: 2,
         name: "Chinese yuan",
         num: "156",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "COP",
-        countries: vec!["CO"],
+        countries: &["CO"],
         exp: 2,
         name: "Colombian peso",
         num: "170",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KMF",
-        countries: vec!["KM"],
+        countries: &["KM"],
         exp: 0,
         name: "Comoro franc",
         num: "174",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CRC",
-        countries: vec!["CR"],
+        countries: &["CR"],
         exp: 2,
         name: "Costa Rican colon",
         num: "188",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "HRK",
-        countries: vec!["HR"],
+        countries: &["HR"],
         exp: 2,
         name: "Croatian kuna",
         num: "191",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CUP",
-        countries: vec!["CU"],
+        countries: &["CU"],
         exp: 2,
         name: "Cuban peso",
         num: "192",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CZK",
-        countries: vec!["CZ"],
+        countries: &["CZ"],
         exp: 2,
         name: "Czech koruna",
         num: "203",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "DKK",
-        countries: vec![
+        countries: &[
             "DK",
             "FO",
             "GL",
@@ -301,125 +267,125 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "Danish krone",
         num: "208",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "DOP",
-        countries: vec!["DO"],
+        countries: &["DO"],
         exp: 2,
         name: "Dominican peso",
         num: "214",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "ETB",
-        countries: vec!["ET"],
+        countries: &["ET"],
         exp: 2,
         name: "Ethiopian birr",
         num: "230",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "ERN",
-        countries: vec!["ER"],
+        countries: &["ER"],
         exp: 2,
         name: "Eritrean nakfa",
         num: "232",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "FKP",
-        countries: vec!["FK"],
+        countries: &["FK"],
         exp: 2,
         name: "Falkland Islands pound",
         num: "238",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "FJD",
-        countries: vec!["FJ"],
+        countries: &["FJ"],
         exp: 2,
         name: "Fiji dollar",
         num: "242",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "DJF",
-        countries: vec!["DJ"],
+        countries: &["DJ"],
         exp: 0,
         name: "Djiboutian franc",
         num: "262",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "GMD",
-        countries: vec!["GM"],
+        countries: &["GM"],
         exp: 2,
         name: "Gambian dalasi",
         num: "270",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "GIP",
-        countries: vec!["GI"],
+        countries: &["GI"],
         exp: 2,
         name: "Gibraltar pound",
         num: "292",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "GTQ",
-        countries: vec!["GT"],
+        countries: &["GT"],
         exp: 2,
         name: "Guatemalan quetzal",
         num: "320",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "GNF",
-        countries: vec!["GN"],
+        countries: &["GN"],
         exp: 0,
         name: "Guinean franc",
         num: "324",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "GYD",
-        countries: vec!["GY"],
+        countries: &["GY"],
         exp: 2,
         name: "Guyanese dollar",
         num: "328",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "HTG",
-        countries: vec!["HT"],
+        countries: &["HT"],
         exp: 2,
         name: "Haitian gourde",
         num: "332",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "HNL",
-        countries: vec!["HN"],
+        countries: &["HN"],
         exp: 2,
         name: "Honduran lempira",
         num: "340",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "HKD",
-        countries: vec![
+        countries: &[
             "HK",
             "MO",
         ],
         exp: 2,
         name: "Hong Kong dollar",
         num: "344",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "HUF",
-        countries: vec!["HU"],
+        countries: &["HU"],
         exp: 2,
         name: "Hungarian forint",
         num: "348",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "ISK",
-        countries: vec!["IS"],
+        countries: &["IS"],
         exp: 0,
         name: "Icelandic króna",
         num: "352",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "INR",
-        countries: vec![
+        countries: &[
             "BT",
             "IN",
             "NP",
@@ -428,254 +394,254 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "Indian rupee",
         num: "356",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "IDR",
-        countries: vec!["ID"],
+        countries: &["ID"],
         exp: 2,
         name: "Indonesian rupiah",
         num: "360",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "IRR",
-        countries: vec!["IR"],
+        countries: &["IR"],
         exp: 2,
         name: "Iranian rial",
         num: "364",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "IQD",
-        countries: vec!["IQ"],
+        countries: &["IQ"],
         exp: 3,
         name: "Iraqi dinar",
         num: "368",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "ILS",
-        countries: vec![
+        countries: &[
             "IL",
             "PS",
         ],
         exp: 2,
         name: "Israeli new shekel",
         num: "376",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KMD",
-        countries: vec!["JM"],
+        countries: &["JM"],
         exp: 2,
         name: "Jamaican dollar",
         num: "388",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "JPY",
-        countries: vec!["JP"],
+        countries: &["JP"],
         exp: 0,
         name: "Japanese yen",
         num: "392",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KZT",
-        countries: vec!["KZ"],
+        countries: &["KZ"],
         exp: 2,
         name: "Kazakhstani tenge",
         num: "398",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "JOD",
-        countries: vec!["JO"],
+        countries: &["JO"],
         exp: 3,
         name: "Jordanian dinar",
         num: "400",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KES",
-        countries: vec!["KE"],
+        countries: &["KE"],
         exp: 2,
         name: "Kenyan shilling",
         num: "404",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KPW",
-        countries: vec!["KP"],
+        countries: &["KP"],
         exp: 2,
         name: "North Korean won",
         num: "408",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KRW",
-        countries: vec!["KR"],
+        countries: &["KR"],
         exp: 0,
         name: "South Korean won",
         num: "410",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KWD",
-        countries: vec!["KW"],
+        countries: &["KW"],
         exp: 3,
         name: "Kuwaiti dinar",
         num: "414",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "KGS",
-        countries: vec!["KG"],
+        countries: &["KG"],
         exp: 2,
         name: "Kyrgyzstani som",
         num: "417",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "LAK",
-        countries: vec!["LA"],
+        countries: &["LA"],
         exp: 2,
         name: "Lao kip",
         num: "418",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "LBP",
-        countries: vec!["LB"],
+        countries: &["LB"],
         exp: 2,
         name: "Lebanese pound",
         num: "422",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "LSL",
-        countries: vec!["LS"],
+        countries: &["LS"],
         exp: 2,
         name: "Lesotho loti",
         num: "426",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "LRD",
-        countries: vec!["LR"],
+        countries: &["LR"],
         exp: 2,
         name: "Liberian dollar",
         num: "430",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "LYD",
-        countries: vec!["LY"],
+        countries: &["LY"],
         exp: 3,
         name: "Libyan dinar",
         num: "434",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MOP",
-        countries: vec!["MO"],
+        countries: &["MO"],
         exp: 2,
         name: "Macanese pataca",
         num: "446",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MWK",
-        countries: vec!["MW"],
+        countries: &["MW"],
         exp: 2,
         name: "Malawian kwacha",
         num: "454",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MYR",
-        countries: vec!["MY"],
+        countries: &["MY"],
         exp: 2,
         name: "Malaysian ringgit",
         num: "458",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MVR",
-        countries: vec!["MV"],
+        countries: &["MV"],
         exp: 2,
         name: "Maldivian rufiyaa",
         num: "462",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MRO",
-        countries: vec!["MR"],
+        countries: &["MR"],
         exp: 1,
         name: "Mauritanian ouguiya",
         num: "478",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MUR",
-        countries: vec!["MU"],
+        countries: &["MU"],
         exp: 2,
         name: "Mauritian rupee",
         num: "480",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MXN",
-        countries: vec!["MX"],
+        countries: &["MX"],
         exp: 2,
         name: "Mexican peso",
         num: "484",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MNT",
-        countries: vec!["MN"],
+        countries: &["MN"],
         exp: 2,
         name: "Mongolian tögrög",
         num: "496",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MDL",
-        countries: vec!["MD"],
+        countries: &["MD"],
         exp: 2,
         name: "Moldovan leu",
         num: "498",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MAD",
-        countries: vec!["MA"],
+        countries: &["MA"],
         exp: 2,
         name: "Moroccan dirham",
         num: "504",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "OMR",
-        countries: vec!["OM"],
+        countries: &["OM"],
         exp: 3,
         name: "Omani rial",
         num: "512",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "NAD",
-        countries: vec!["NA"],
+        countries: &["NA"],
         exp: 2,
         name: "Namibian dollar",
         num: "516",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "NPR",
-        countries: vec!["NP"],
+        countries: &["NP"],
         exp: 2,
         name: "Nepalese rupee",
         num: "524",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "ANG",
-        countries: vec![
+        countries: &[
             "CW",
             "SX",
         ],
         exp: 2,
         name: "Netherlands Antillean guilder",
         num: "532",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "AWG",
-        countries: vec!["AW"],
+        countries: &["AW"],
         exp: 2,
         name: "Aruban florin",
         num: "533",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "VUV",
-        countries: vec!["VU"],
+        countries: &["VU"],
         exp: 0,
         name: "Vanuatu vatu",
         num: "548",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "NZD",
-        countries: vec![
+        countries: &[
             "AQ",
             "CK",
             "NU",
@@ -686,24 +652,24 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "New Zealand dollar",
         num: "554",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "NIO",
-        countries: vec!["NI"],
+        countries: &["NI"],
         exp: 2,
         name: "Nicaraguan córdoba",
         num: "558",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "NGN",
-        countries: vec!["NG"],
+        countries: &["NG"],
         exp: 2,
         name: "Nigerian naira",
         num: "566",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "NOK",
-        countries: vec![
+        countries: &[
             "AQ",
             "BV",
             "NO",
@@ -712,59 +678,59 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "Norwegian krone",
         num: "578",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "PKR",
-        countries: vec!["PK"],
+        countries: &["PK"],
         exp: 2,
         name: "Pakistani rupee",
         num: "586",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "PAB",
-        countries: vec!["PA"],
+        countries: &["PA"],
         exp: 2,
         name: "Panamanian balboa",
         num: "590",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "PGK",
-        countries: vec!["PG"],
+        countries: &["PG"],
         exp: 2,
         name: "Papua New Guinean kina",
         num: "598",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "PYG",
-        countries: vec!["PY"],
+        countries: &["PY"],
         exp: 0,
         name: "Paraguayan guaraní",
         num: "600",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "PEN",
-        countries: vec!["PE"],
+        countries: &["PE"],
         exp: 2,
         name: "Peruvian Sol",
         num: "604",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "PHP",
-        countries: vec!["PH"],
+        countries: &["PH"],
         exp: 2,
         name: "Philippine peso",
         num: "608",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "QAR",
-        countries: vec!["QA"],
+        countries: &["QA"],
         exp: 2,
         name: "Qatari riyal",
         num: "634",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "RUB",
-        countries: vec![
+        countries: &[
             "GE-AB",
             "RU",
             "UA-43",
@@ -772,124 +738,124 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "Russian ruble",
         num: "643",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "RWF",
-        countries: vec!["RW"],
+        countries: &["RW"],
         exp: 0,
         name: "Rwandan franc",
         num: "646",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SHP",
-        countries: vec![
+        countries: &[
             "SH-AC",
             "SH-SH",
         ],
         exp: 2,
         name: "Saint Helena pound",
         num: "654",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "STD",
-        countries: vec!["ST"],
+        countries: &["ST"],
         exp: 2,
         name: "São Tomé and Príncipe dobra",
         num: "678",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SAR",
-        countries: vec!["SA"],
+        countries: &["SA"],
         exp: 2,
         name: "Saudi riyal",
         num: "682",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SCR",
-        countries: vec!["SC"],
+        countries: &["SC"],
         exp: 2,
         name: "Seychelles rupee",
         num: "690",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SLL",
-        countries: vec!["SL"],
+        countries: &["SL"],
         exp: 2,
         name: "Sierra Leonean leone",
         num: "694",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SGD",
-        countries: vec![
+        countries: &[
             "BN",
             "SG",
         ],
         exp: 2,
         name: "Singapore dollar",
         num: "702",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "VND",
-        countries: vec!["VN"],
+        countries: &["VN"],
         exp: 0,
         name: "Vietnamese dong",
         num: "704",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SOS",
-        countries: vec!["SO"],
+        countries: &["SO"],
         exp: 2,
         name: "Somali shilling",
         num: "706",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "ZAR",
-        countries: vec!["ZA"],
+        countries: &["ZA"],
         exp: 2,
         name: "South African rand",
         num: "710",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SSP",
-        countries: vec!["SS"],
+        countries: &["SS"],
         exp: 2,
         name: "South Sudeanese pound",
         num: "728",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SZL",
-        countries: vec!["SZ"],
+        countries: &["SZ"],
         exp: 2,
         name: "Swazi lilangeni",
         num: "748",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SEK",
-        countries: vec!["SE"],
+        countries: &["SE"],
         exp: 2,
         name: "Swedish krona/kronor",
         num: "752",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CHF",
-        countries: vec![
+        countries: &[
             "CH",
             "LI",
         ],
         exp: 2,
         name: "Swiss franc",
         num: "756",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SYP",
-        countries: vec!["SY"],
+        countries: &["SY"],
         exp: 2,
         name: "Syrian pound",
         num: "760",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "THB",
-        countries: vec![
+        countries: &[
             "KH",
             "LA",
             "MM",
@@ -898,59 +864,59 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "Thai baht",
         num: "764",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "TOP",
-        countries: vec!["TO"],
+        countries: &["TO"],
         exp: 2,
         name: "Tongan pa'anga",
         num: "776",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "TTD",
-        countries: vec!["TT"],
+        countries: &["TT"],
         exp: 2,
         name: "Trinidad and Tobago dollar",
         num: "780",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "AED",
-        countries: vec!["AE"],
+        countries: &["AE"],
         exp: 2,
         name: "United Arab Emirates dirham",
         num: "784",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "TND",
-        countries: vec!["TN"],
+        countries: &["TN"],
         exp: 3,
         name: "Tunisian dinar",
         num: "788",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "UGX",
-        countries: vec!["UG"],
+        countries: &["UG"],
         exp: 0,
         name: "Ugandan shilling",
         num: "800",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MKD",
-        countries: vec!["MK"],
+        countries: &["MK"],
         exp: 2,
         name: "Macedonian denar",
         num: "807",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "EGP",
-        countries: vec!["EG"],
+        countries: &["EG"],
         exp: 2,
         name: "Egyptian pound",
         num: "818",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "GBP",
-        countries: vec![
+        countries: &[
             "GG",
             "GS",
             "IM",
@@ -962,17 +928,17 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "Pound sterling",
         num: "826",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "TZS",
-        countries: vec!["TZ"],
+        countries: &["TZ"],
         exp: 2,
         name: "Tanzanian shilling",
         num: "834",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "USD",
-        countries: vec![
+        countries: &[
             "AS",
             "BB",
             "BM",
@@ -998,115 +964,115 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "United States dollar",
         num: "840",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "UYU",
-        countries: vec!["UY"],
+        countries: &["UY"],
         exp: 2,
         name: "Uruguayan peso",
         num: "858",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "UZS",
-        countries: vec!["UZ"],
+        countries: &["UZ"],
         exp: 2,
         name: "Uzbekistan som",
         num: "860",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "WST",
-        countries: vec!["WS"],
+        countries: &["WS"],
         exp: 2,
         name: "Samoan tala",
         num: "882",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "YER",
-        countries: vec!["YE"],
+        countries: &["YE"],
         exp: 2,
         name: "Yemeni rial",
         num: "886",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "TWD",
-        countries: vec!["TW"],
+        countries: &["TW"],
         exp: 2,
         name: "New Taiwan dollar",
         num: "901",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CUC",
-        countries: vec!["CU"],
+        countries: &["CU"],
         exp: 2,
         name: "Cuban convertible peso",
         num: "931",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "TMT",
-        countries: vec!["TM"],
+        countries: &["TM"],
         exp: 2,
         name: "Turkmenistani manat",
         num: "934",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "GHS",
-        countries: vec!["GH"],
+        countries: &["GH"],
         exp: 2,
         name: "Ghanaian cedi",
         num: "936",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "VEF",
-        countries: vec!["VE"],
+        countries: &["VE"],
         exp: 2,
         name: "Venezuelan bolivar",
         num: "937",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SDG",
-        countries: vec!["SD"],
+        countries: &["SD"],
         exp: 2,
         name: "Sudanese pound",
         num: "938",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "RSD",
-        countries: vec!["RS"],
+        countries: &["RS"],
         exp: 2,
         name: "Serbian dinar",
         num: "941",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MZN",
-        countries: vec!["MZ"],
+        countries: &["MZ"],
         exp: 2,
         name: "Mozambican metical",
         num: "943",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "AZN",
-        countries: vec!["AZ"],
+        countries: &["AZ"],
         exp: 2,
         name: "Azerbaijani manat",
         num: "944",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "RON",
-        countries: vec!["RO"],
+        countries: &["RO"],
         exp: 2,
         name: "Romanian leu",
         num: "946",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "TRY",
-        countries: vec!["TR"],
+        countries: &["TR"],
         exp: 2,
         name: "Turkish lira",
         num: "949",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "XAF",
-        countries: vec![
+        countries: &[
             "CM",
             "CF",
             "CG",
@@ -1117,10 +1083,10 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 0,
         name: "CFA franc BEAC",
         num: "950",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "XCD",
-        countries: vec![
+        countries: &[
             "AI",
             "AG",
             "DM",
@@ -1133,10 +1099,10 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "East Caribbean dollar",
         num: "951",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "XOF",
-        countries: vec![
+        countries: &[
             "BF",
             "BJ",
             "CI",
@@ -1149,10 +1115,10 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 0,
         name: "CFA franc BCEAO",
         num: "952",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "XPF",
-        countries: vec![
+        countries: &[
             "NC",
             "PF",
             "WF",
@@ -1160,80 +1126,80 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 0,
         name: "CFP franc",
         num: "953",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "ZMW",
-        countries: vec!["ZM"],
+        countries: &["ZM"],
         exp: 2,
         name: "Zambian kwacha",
         num: "967",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "SRD",
-        countries: vec!["SR"],
+        countries: &["SR"],
         exp: 2,
         name: "Surinamese dollar",
         num: "968",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "MGA",
-        countries: vec!["MG"],
+        countries: &["MG"],
         exp: 1,
         name: "Malagasy ariary",
         num: "969",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "AFN",
-        countries: vec!["AF"],
+        countries: &["AF"],
         exp: 2,
         name: "Afghan afghani",
         num: "971",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "TJS",
-        countries: vec!["TJ"],
+        countries: &["TJ"],
         exp: 2,
         name: "Tajikstani somoni",
         num: "972",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "AOA",
-        countries: vec!["AO"],
+        countries: &["AO"],
         exp: 2,
         name: "Angolan kwanza",
         num: "973",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BYR",
-        countries: vec!["BY"],
+        countries: &["BY"],
         exp: 0,
         name: "Belarusian ruble",
         num: "974",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BGN",
-        countries: vec!["BG"],
+        countries: &["BG"],
         exp: 2,
         name: "Bulgarian lev",
         num: "975",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "CDF",
-        countries: vec!["CD"],
+        countries: &["CD"],
         exp: 2,
         name: "Congolese franc",
         num: "976",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BAM",
-        countries: vec!["BA"],
+        countries: &["BA"],
         exp: 2,
         name: "Bosnia and Herzegovina convertible mark",
         num: "977",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "EUR",
-        countries: vec![
+        countries: &[
             "AD",
             "AT",
             "BE",
@@ -1269,35 +1235,69 @@ pub fn all<'a>() -> Vec<CurrencyCode<'a>> {
         exp: 2,
         name: "Euro",
         num: "978",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "UAH",
-        countries: vec!["UA"],
+        countries: &["UA"],
         exp: 2,
         name: "Ukrainian hryvnia",
         num: "980",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "GEL",
-        countries: vec!["GE"],
+        countries: &["GE"],
         exp: 2,
         name: "Georgian lari",
         num: "981",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "PLN",
-        countries: vec!["PL"],
+        countries: &["PL"],
         exp: 2,
         name: "Polish złoty",
         num: "985",
-    });
-    codes.push(CurrencyCode {
+    },
+    CurrencyCode {
         alpha3: "BRL",
-        countries: vec!["BR"],
+        countries: &["BR"],
         exp: 2,
         name: "Brazilian real",
         num: "986",
-    });
+    },
+];
 
-    codes
+/// Returns all CurrencyCodes defined by ISO 4217.
+// A function that returns a ref to a really big array of all the currency codes
+// designated by ISO 4217, with some exceptions:
+//
+// - BOV Bolivian Mvdol (funds code)
+// - CHE WIR Euro (complementary currency)
+// - CHW WIR Franc (complementary currency)
+// - CLF Unidad de Fomento (funds code)
+// - CNH Chinese yuan when traded in Hong Kong
+// - COU Unidad de Valor Real (UVR) (funds code)
+// - MXV Mexican Unidad de Inversion (UDI) (funds code)
+// - USN United States dollar (next day) (funds code)
+// - USS United States dollar (same day) (funds code)
+// - UYI Uruguay Peso en Unidades Indexadas (URUIURUI) (funds code)
+// - XAG Silver (one troy ounce)
+// - XAU Gold (one troy ounce)
+// - XBA European Composite Unit (EURCO) (bond market unit)
+// - XBB European Monetary Unit (E.M.U.-6) (bond market unit)
+// - XBC European Unit of Account 9 (E.U.A.-9) (bond market unit)
+// - XBD European Unit of Account 17 (E.U.A.-17) (bond market unit)
+// - XDR Special drawing rights
+// - XFU UIC franc (special settlement currency)
+// - XPD Palladium (one troy ounce)
+// - XPT Platinum (one troy ounce)
+// - XSU Unified System for Regional Compensation (SUCRE)
+// - XTS Code reserved for testing purposes
+// - XUA ADB Unit of Account (African Development Bank)
+// - XXX No currency
+// - ZWD Zimbabwe dollar
+//
+// Country alpha2-codes are taken from the ISO's website:
+// https://www.iso.org/obp/ui/
+pub fn all() -> &'static [CurrencyCode] {
+    &ALL
 }

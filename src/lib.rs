@@ -30,40 +30,40 @@ pub use codes::all;
 
 /// Data for each Currency Code defined by ISO 4217.
 #[derive(Clone, Debug)]
-pub struct CurrencyCode<'a> {
+pub struct CurrencyCode {
     /// 3-letter code of the currency
-    pub alpha3: &'a str,
+    pub alpha3: &'static str,
     /// Vector of Alpha2 codes for the countries that use the currency
-    pub countries: Vec<&'a str>,
+    pub countries: &'static [&'static str],
     /// Number of decimals
     pub exp: i8,
     /// Fully readable and used name
-    pub name: &'a str,
+    pub name: &'static str,
     /// Assigned 3-digit numeric code
-    pub num: &'a str,
+    pub num: &'static str,
 }
 
 /// Returns the CurrencyCode with the given Alpha3 code, if one exists.
-pub fn alpha3<'a>(alpha3: &str) -> Option<CurrencyCode<'a>> {
-    all().into_iter().find(|c| c.alpha3 == alpha3)
+pub fn alpha3(alpha3: &str) -> Option<&'static CurrencyCode> {
+    all().iter().find(|c| c.alpha3 == alpha3)
 }
 
 /// Returns a vector of all CurrencyCodes that use a given Alpha2 code.
-pub fn country<'a>(country: &str) -> Vec<CurrencyCode<'a>> {
-    all().into_iter().filter(|c| c.countries.contains(&country)).collect()
+pub fn country(country: &str) -> Vec<&'static CurrencyCode> {
+    all().iter().filter(|c| c.countries.contains(&country)).collect()
 }
 
 /// Returns a vector of all CurrencyCodes with the specified decimal place.
-pub fn exp<'a>(exp: i8) -> Vec<CurrencyCode<'a>> {
-    all().into_iter().filter(|c| c.exp == exp).collect()
+pub fn exp(exp: i8) -> Vec<&'static CurrencyCode> {
+    all().iter().filter(|c| c.exp == exp).collect()
 }
 
 /// Returns the CurrencyCode with the given name, if one exists.
-pub fn name<'a>(name: &str) -> Option<CurrencyCode<'a>> {
-    all().into_iter().find(|c| c.name == name)
+pub fn name(name: &str) -> Option<&'static CurrencyCode> {
+    all().iter().find(|c| c.name == name)
 }
 
 /// Returns the CurrencyCode with the given numerical code, if one exists.
-pub fn num<'a>(num: &str) -> Option<CurrencyCode<'a>> {
-    all().into_iter().find(|c| c.num == num)
+pub fn num(num: &str) -> Option<&'static CurrencyCode> {
+    all().iter().find(|c| c.num == num)
 }
