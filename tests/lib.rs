@@ -68,8 +68,8 @@ fn backwards_compats() {
 // 'countries' field.
 #[test]
 fn countrycode_countries() {
-    let currency_multiple: CurrencyCode = alpha3("AUD").unwrap();
-    let currency_single: CurrencyCode = alpha3("ALL").unwrap();
+    let currency_multiple: &CurrencyCode = alpha3("AUD").unwrap();
+    let currency_single: &CurrencyCode = alpha3("ALL").unwrap();
 
     assert!(currency_multiple.countries.len() > 1);
     assert!(currency_single.countries.len() == 1);
