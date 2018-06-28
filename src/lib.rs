@@ -48,18 +48,8 @@ pub fn alpha3(alpha3: &str) -> Option<&'static CurrencyCode> {
     all().iter().find(|c| c.alpha3 == alpha3)
 }
 
-#[cfg(all(nightly, feature = "const-fn"))]
-pub const fn get_alpha3(alpha3: &'static str) -> &'static CurrencyCode {
-    all().iter().find(|c| c.alpha3 == alpha3).unwrap()
-}
-
 /// Returns a vector of all CurrencyCodes that use a given Alpha2 code.
 pub fn country(country: &str) -> Vec<&'static CurrencyCode> {
-    all().iter().filter(|c| c.countries.contains(&country)).collect()
-}
-
-#[cfg(all(nightly, feature = "const-fn"))]
-pub const fn get_country(country: &'static str) -> Vec<&'static CurrencyCode> {
     all().iter().filter(|c| c.countries.contains(&country)).collect()
 }
 
@@ -68,27 +58,12 @@ pub fn exp(exp: i8) -> Vec<&'static CurrencyCode> {
     all().iter().filter(|c| c.exp == exp).collect()
 }
 
-#[cfg(all(nightly, feature = "const-fn"))]
-pub const fn get_exp(exp: i8) -> Vec<&'static CurrencyCode> {
-    all().iter().filter(|c| c.exp == exp).collect()
-}
-
 /// Returns the CurrencyCode with the given name, if one exists.
 pub fn name(name: &str) -> Option<&'static CurrencyCode> {
     all().iter().find(|c| c.name == name)
 }
 
-#[cfg(all(nightly, feature = "const-fn"))]
-pub const fn get_name(name: &str) -> &'static CurrencyCode {
-    all().iter().find(|c| c.name == name).unwrap()
-}
-
 /// Returns the CurrencyCode with the given numerical code, if one exists.
 pub fn num(num: &str) -> Option<&'static CurrencyCode> {
     all().iter().find(|c| c.num == num)
-}
-
-#[cfg(all(nightly, feature = "const-fn"))]
-pub const fn get_num(num: &'static str) -> &'static CurrencyCode {
-    all().iter().find(|c| c.num == num).unwrap()
 }
