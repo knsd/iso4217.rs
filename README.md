@@ -17,7 +17,7 @@ Rust crate for ISO 4217 data.
 Add the following dependency to your Cargo.toml:
 
 ```toml
-iso4217 = "0.2"
+iso4217 = "0.3"
 ```
 
 And include it in your project:

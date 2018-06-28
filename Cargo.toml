@@ -6,7 +6,7 @@ keywords = ["iso4217", "ISO", "4217"]
 name = "iso4217"
 readme = "README.md"
 repository = "https://github.com/zeyla/iso4217.rs"
-version = "0.2.0"
+version = "0.3.0"
 
 [features]
 default = ["const-fn"]
