@@ -1222,7 +1222,6 @@ const ALL: [CurrencyCode; 155] = [
             "MQ",
             "MT",
             "NL",
-            "NL",
             "PM",
             "PT",
             "RE",
