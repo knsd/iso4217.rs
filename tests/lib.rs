@@ -26,6 +26,8 @@
 
 extern crate iso4217;
 
+use std::collections::HashSet;
+
 use iso4217::{CurrencyCode, all, alpha3, country, exp, name, num};
 
 #[test]
@@ -73,4 +75,15 @@ fn countrycode_countries() {
 
     assert!(currency_multiple.countries.len() > 1);
     assert!(currency_single.countries.len() == 1);
+}
+
+#[test]
+fn test_no_duplicated_countries() {
+    for currency in all() {
+        assert_eq!(
+            currency.countries.iter().cloned().collect::<HashSet<&'static str>>().len(),
+            currency.countries.len(),
+            "{} contains duplicated countries", currency.name
+        )
+    }
 }
